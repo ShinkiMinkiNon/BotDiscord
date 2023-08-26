@@ -71,6 +71,7 @@ async def on_message(message: disnake.Message):
 
 
 # New function to logging (Maybe changed (Need to recheck))
+# Check 100%
 @bot.command()
 async def logging(context: commands.Context):
     global flag_to_logs
