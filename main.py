@@ -29,7 +29,7 @@ async def time_delete(context: commands.Context):
 @bot.command()
 async def hello(context: commands.Context):
     print(context.message.content)
-    await context.send('Hello World! I wanna eat Niggers!')
+    await context.send('Hello')
 
 
 @bot.event
@@ -38,7 +38,6 @@ async def on_message(message: disnake.Message):
     global flag_to_logs
     user = message.author
     text = message.content.lower()
-    # # 694834354769362986
 
     await bot.process_commands(message)
     if message.content.startswith(PREFIX):
@@ -55,12 +54,9 @@ async def on_message(message: disnake.Message):
 
     if text in BANNED_WORDS:
         await message.channel.send(f"{user.mention} You do not ought to write these words."
-                                   " Else one big human will fuck your tiny ass",
+                                   " Else you will banned",
                                    delete_after=7.0)
         await message.delete(delay=7.0)
-
-    if (str(user) == "Cute bot#1081") and ("ты заебал со" in text):
-        await message.channel.send("Иди нахуй", delete_after=4.0)
 
     # if random.randint(1, 7) == 3:
     #     await message.add_reaction(":)")
@@ -79,10 +75,10 @@ async def logging(context: commands.Context):
 
 
 # Write it later
-@bot.slash_command(description="Приказывает человеку закончить теребоньканье")
+@bot.slash_command(description="Приказывает человеку закончить ничегонеделание")
 async def fup(context: disnake.ApplicationCommandInteraction, member: disnake.Member):
     mentioned_member = get(context.guild.members, id=member.id)
-    await context.send(f"Хватит теребонькать {mentioned_member.mention}! Иди сюда!")
+    await context.send(f"Хватит бездельничать {mentioned_member.mention}! Иди сюда!")
 
 
 @bot.command(name="matataCall")
