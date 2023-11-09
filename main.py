@@ -53,7 +53,7 @@ async def on_message(message: disnake.Message):
             log_file.write(string)
 
     if text in BANNED_WORDS:
-        await message.channel.send(f"{user.mention} You do not ought to write these words."
+        await message.channel.send(f"{user.mention} You do not should write these words."
                                    " Else you will banned",
                                    delete_after=7.0)
         await message.delete(delay=7.0)
@@ -75,8 +75,8 @@ async def logging(context: commands.Context):
 
 
 # Write it later
-@bot.slash_command(description="Приказывает человеку закончить ничегонеделание")
-async def fup(context: disnake.ApplicationCommandInteraction, member: disnake.Member):
+@bot.slash_command(name="goWork", description="Приказывает человеку закончить ничегонеделание")
+async def go_work(context: disnake.ApplicationCommandInteraction, member: disnake.Member):
     mentioned_member = get(context.guild.members, id=member.id)
     await context.send(f"Хватит бездельничать {mentioned_member.mention}! Иди сюда!")
 
